@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply bg-[#141414] text-white;
+    @apply bg-[#141414] text-white overflow-x-hidden
   }
   header {
     @apply fixed top-0 z-50 flex items-center justify-between w-full p-4 transition-all lg:py-6 lg:px-10
@@ -15,4 +15,16 @@
   .button {
     @apply flex items-center gap-x-2 rounded px-5 py-1.5 text-sm font-semibold transition hover:opacity-70 md:py-3 md:px-8 md:text-lg
   }
+
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 }

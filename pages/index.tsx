@@ -4,6 +4,7 @@ import Header from '../components/Header'
 import {  GetServerSideProps } from "next";
 import requests from '../requests'
 import { Movie } from '../typings';
+import Row from '../components/Row';
 
 interface Props {
   netflixOriginals: Movie[]
@@ -34,9 +35,17 @@ const Home = ({
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <main className='relative pl-4 pb-24 lg:pl-16 space-y-4'>
-        <Banner netflixOriginals={  netflixOriginals} />
-        <section>{/* row */}</section>
+      <main className="relative pl-4 pb-24 lg:pl-16 space-y-4">
+        <Banner netflixOriginals={netflixOriginals} />
+        <section>
+          <Row title="Trending Now" movies={trendingNow} />
+          <Row title="Top Rated" movies={topRated} />
+          <Row title="Action Thrillers" movies={actionMovies} />
+          <Row title="Comedies" movies={comedyMovies} />
+          <Row title="Scary Movies" movies={horrorMovies} />
+          <Row title="Romance Movies" movies={romanceMovies} />
+          <Row title="Documentaries" movies={documentaries} />
+        </section>
       </main>
     </div>
   );
