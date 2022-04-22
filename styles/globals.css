@@ -15,7 +15,9 @@
   .button {
     @apply flex items-center gap-x-2 rounded px-5 py-1.5 text-sm font-semibold transition hover:opacity-70 md:py-3 md:px-8 md:text-lg
   }
-
+.input {
+  @apply w-full rounded outline-none bg-[#333] px-5 py-4 placeholder-[gray] focus:bg-[#454545]
+}
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
