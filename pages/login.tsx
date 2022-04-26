@@ -2,8 +2,10 @@ import { signInWithPopup, signInWithRedirect } from "firebase/auth";
 import Image from "next/image";
 import React, { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
+import useAuth from "../hooks/useAuth";
 
 const Login = () => {
+  const { signIn, signUp } = useAuth();
   const [login, setLogin] = useState<boolean>(false);
   type Inputs = {
     email: string;

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { BsSearch, BsFillBellFill } from "react-icons/bs";
+import useAuth from "../hooks/useAuth";
 const Header = () => {
   const data = ["Home", "TV Shows", "Movies", "New & Popular", "My List"];
   const [scroll, setScroll] = useState(false);
@@ -17,7 +18,7 @@ const Header = () => {
         window.removeEventListener("scroll", handleScroll);
     }
   }, []);
-
+  const { logout } = useAuth();
   return (
     <header className= {`${scroll && 'bg-[#141414]'}`}>
       <div className="flex items-center space-x-2 md:space-x-9">
@@ -48,6 +49,7 @@ const Header = () => {
             src="https://rb.gy/g1pwyx"
             alt=""
             className="cursor-pointer rounded"
+            onClick={logout}
           />
         </Link>
       </div>

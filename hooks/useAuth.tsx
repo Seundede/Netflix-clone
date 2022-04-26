@@ -33,7 +33,7 @@ const AuthContext = createContext<IAuth>({
 export const AuthProvider = ({ children }: Props) => {
   const [loading, setLoading] = useState(false);
   const [user, setUser] = useState<User | null>(null);
-    const [error, setError] = useState<boolean>(false);
+    const [error, setError] = useState(false);
   const router = useRouter();
 
   useEffect(
@@ -52,7 +52,7 @@ export const AuthProvider = ({ children }: Props) => {
       }),
     [router]
   );
-  const SignUp = async (email: string, password: string) => {
+  const signUp = async (email: string, password: string) => {
     setLoading(true);
     await createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
@@ -63,7 +63,7 @@ export const AuthProvider = ({ children }: Props) => {
       .catch((error) => console.log(error))
       .finally(() => setLoading(false));
   };
-  const SignIn = async (email: string, password: string) => {
+  const signIn = async (email: string, password: string) => {
     setLoading(true);
     await signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
@@ -85,9 +85,9 @@ export const AuthProvider = ({ children }: Props) => {
     () => ({
       user,
       logout,
-      SignIn,
+      signIn,
       loading,
-      SignUp,
+      signUp,
      error
       
     }),
