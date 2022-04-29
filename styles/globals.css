@@ -18,6 +18,9 @@
 .input {
   @apply w-full rounded outline-none bg-[#333] px-5 py-4 placeholder-[gray] focus:bg-[#454545]
 }
+.modalButton {
+  @apply flex items-center justify-center h-11 w-11 border-2 rounded-full border-[gray] bg-[#2a2a2a]/60 transition hover:border-white hover:bg-white/10
+}
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */

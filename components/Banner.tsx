@@ -4,6 +4,8 @@ import { baseUrl } from "../requests";
 import { Movie } from "../typings";
 import { FaPlay } from 'react-icons/fa'
 import { HiInformationCircle } from "react-icons/hi";
+import { useRecoilState } from "recoil";
+import { modalState, movieState } from "../atoms/modalAtom";
 
 type Props = {
   netflixOriginals: Movie[];
@@ -18,7 +20,8 @@ const Banner = ({ netflixOriginals }: Props) => {
    const truncate = (string: any , n:number) => {
      return string?.length > n ? string.substr(0, n - 1) + "..." : string;
    };
-
+  const [showModal, setShowModal] = useRecoilState(modalState);
+    const [currentMovie, setCurrentMovie] = useRecoilState(movieState)
   return (
     <div className="flex flex-col space-y-2 py-16  md:space-y-4 lg:h-[65vh] lg:pb-12 lg:justify-end">
       <div className="top-0 left-0 absolute h-[95vh] w-screen -z-50">
@@ -36,11 +39,16 @@ const Banner = ({ netflixOriginals }: Props) => {
         {truncate(movie?.overview, 150)}
       </p>
       <div className="flex space-x-4">
-        <button className="button bg-white text-black">
+        <button className="button bg-white text-black" onClick={() => {
+          setCurrentMovie(movie)
+          setShowModal(true)}}>
           <FaPlay className="text-black h-4 w-4 md:h-7 md:w-7 " />
           Play
         </button>
-        <button className="button bg-[gray]/70">
+        <button className="button bg-[gray]/70" onClick={() => {
+          setCurrentMovie(movie)
+          setShowModal(true)
+        }}>
           More Info
           <HiInformationCircle className=" h-4 w-4 md:h-7 md:w-7 " />
         </button>
