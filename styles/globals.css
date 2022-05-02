@@ -4,32 +4,35 @@
 
 @layer base {
   body {
-    @apply bg-[#141414] text-white overflow-x-hidden
+    @apply bg-[#141414] text-white overflow-x-hidden;
   }
   header {
-    @apply fixed top-0 z-50 flex items-center justify-between w-full p-4 transition-all lg:py-6 lg:px-10
+    @apply fixed top-0 z-50 flex items-center justify-between w-full p-4 transition-all lg:py-6 lg:px-10;
   }
-
 }
 @layer components {
   .button {
-    @apply flex items-center gap-x-2 rounded px-5 py-1.5 text-sm font-semibold transition hover:opacity-70 md:py-3 md:px-8 md:text-lg
+    @apply flex items-center gap-x-2 rounded px-5 py-1.5 text-sm font-semibold transition hover:opacity-70 md:py-3 md:px-8 md:text-lg;
   }
-.input {
-  @apply w-full rounded outline-none bg-[#333] px-5 py-4 placeholder-[gray] focus:bg-[#454545]
-}
-.modalButton {
-  @apply flex items-center justify-center h-11 w-11 border-2 rounded-full border-[gray] bg-[#2a2a2a]/60 transition hover:border-white hover:bg-white/10
-}
+  .input {
+    @apply w-full rounded outline-none bg-[#333] px-5 py-4 placeholder-[gray] focus:bg-[#454545];
+  }
+  .modalButton {
+    @apply flex items-center justify-center h-11 w-11 border-2 rounded-full border-[gray] bg-[#2a2a2a]/60 transition hover:border-white hover:bg-white/10;
+  }
+  .plan {
+    @apply relative mx-1.5 flex h-20 bg-[#e50914] w-[calc(100%/3)] cursor-default items-center justify-center rounded-sm font-semibold shadow after:absolute after:top-full after:block after:left-1/2
+    after:-translate-x-1/2 after:border-8 after:border-b-0 after:border-transparent after:border-t-[#e50914] after:content-[''] md:h-32 lg:mx-8;
+  }
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
 .no-scrollbar::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 /* Hide scrollbar for IE, Edge and Firefox */
 .no-scrollbar {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
