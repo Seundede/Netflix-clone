@@ -9,6 +9,7 @@ import useAuth from '../hooks/useAuth';
 import { useRecoilValue } from 'recoil';
 import { modalState } from '../atoms/modalAtom';
 import PopUp from "../components/PopUp";
+import Plan from './plan';
 
 interface Props {
   netflixOriginals: Movie[]
@@ -37,7 +38,7 @@ const Home = ({
   if(loading || subscription ) {
     return null
   }
-  if(!subscription) return <div>plans</div>
+  if(!subscription) return <Plan />
   return (
     <div className="h-screen lg:h-[140vh] relative bg-gradient-to-b from-gray-900/10 to-[#010511]">
       <Head>
