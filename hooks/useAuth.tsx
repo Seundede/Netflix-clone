@@ -18,9 +18,10 @@ interface IAuth {
   signUp: (email: string, password: string) => Promise<void>;
   signIn: (email: string, password: string) => Promise<void>;
   logout: () => Promise<void>;
-  error: string | null;
+  error: any | null;
   loading: boolean;
 }
+
 const AuthContext = createContext<IAuth>({
   user: null,
   signUp: async () => {},
@@ -32,7 +33,7 @@ const AuthContext = createContext<IAuth>({
 export const AuthProvider = ({ children }: Props) => {
   const [loading, setLoading] = useState(false);
   const [user, setUser] = useState<User | null>(null);
-    const [error, setError] = useState(false);
+  const [error, setError] = useState(false);
   const router = useRouter();
 
   useEffect(
@@ -80,19 +81,13 @@ export const AuthProvider = ({ children }: Props) => {
       .catch((error) => console.log(error))
       .finally(() => setLoading(false));
   };
-  const memoedValue = useMemo(
-    () => ({
-      user,
-      logout,
-      signIn,
-      loading,
-      signUp,
-     error
-      
-    }),
-    [user, loading, error]
+   const memoedValue = useMemo(
+     () => ({ user, signUp, signIn, error, loading, logout }),
+     [user, loading, error, signIn, signUp]
+   );
+  return (
+    <AuthContext.Provider value={memoedValue}>{children}</AuthContext.Provider>
   );
-  return <AuthContext.Provider value={memoedValue}>{children}</AuthContext.Provider>;
 };
 
 export default function useAuth() {
