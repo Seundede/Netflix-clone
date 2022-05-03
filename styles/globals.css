@@ -7,7 +7,7 @@
     @apply bg-[#141414] text-white overflow-x-hidden;
   }
   header {
-    @apply fixed top-0 z-50 flex items-center justify-between w-full p-4 transition-all lg:py-6 lg:px-10;
+    @apply fixed top-0 z-50 flex items-center justify-between w-full p-2 transition-all lg:py-3 lg:px-5;
   }
 }
 @layer components {

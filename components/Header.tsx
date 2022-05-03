@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { BsSearch, BsFillBellFill } from "react-icons/bs";
 import useAuth from "../hooks/useAuth";
@@ -23,7 +24,7 @@ const Header = () => {
   return (
     <header className={`${scroll && "bg-[#141414]"}`}>
       <div className="flex items-center space-x-2 md:space-x-9">
-        <img
+        <Image
           className="cursor-pointer object-contain"
           src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
           width={100}
@@ -46,10 +47,12 @@ const Header = () => {
         <p className="hidden lg:inline">Kids</p>
         <BsFillBellFill className="h-6 w-6" />
 
-        <img
+        <Image
           src="https://rb.gy/g1pwyx"
-          alt=""
-          className="cursor-pointer rounded"
+          alt="avatar"
+          width={40}
+          height={40}
+          className="cursor-pointer rounded  object-contain "
           onClick={logout}
         />
       </div>

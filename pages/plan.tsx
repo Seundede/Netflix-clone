@@ -4,6 +4,7 @@ import useAuth from "../hooks/useAuth";
 import { FiCheck } from "react-icons/fi";
 import Table from "../components/Table";
 import { useRouter } from "next/router";
+import Image from "next/image";
 const Plan = () => {
   const { logout } = useAuth();
   const router = useRouter();
@@ -15,11 +16,11 @@ const Plan = () => {
     <div>
       <header className="border-b border-white/10 bg-[#141414]">
         <Link href="/" passHref>
-          <img
+          <Image
             className="cursor-pointer object-contain"
             src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
-            width={100}
-            height={100}
+            width={70}
+            height={70}
             alt="logo"
           />
         </Link>
