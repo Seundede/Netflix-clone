@@ -1,6 +1,5 @@
 import React from 'react'
 import { Movie } from '../typings'
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import MovieContent from "./MovieContent";
 
 interface Props {

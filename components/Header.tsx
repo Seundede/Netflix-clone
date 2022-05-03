@@ -1,10 +1,11 @@
-import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { BsSearch, BsFillBellFill } from "react-icons/bs";
 import useAuth from "../hooks/useAuth";
+
 const Header = () => {
   const data = ["Home", "TV Shows", "Movies", "New & Popular", "My List"];
   const [scroll, setScroll] = useState(false);
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 0) {
@@ -13,14 +14,14 @@ const Header = () => {
         setScroll(false);
       }
     };
-    window.addEventListener('scroll', handleScroll)
+    window.addEventListener("scroll", handleScroll);
     return () => {
-        window.removeEventListener("scroll", handleScroll);
-    }
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
   const { logout } = useAuth();
   return (
-    <header className= {`${scroll && 'bg-[#141414]'}`}>
+    <header className={`${scroll && "bg-[#141414]"}`}>
       <div className="flex items-center space-x-2 md:space-x-9">
         <img
           className="cursor-pointer object-contain"
@@ -44,14 +45,13 @@ const Header = () => {
         <BsSearch className="hidden md:inline h-6 w-6" />
         <p className="hidden lg:inline">Kids</p>
         <BsFillBellFill className="h-6 w-6" />
-        <Link href="/account">
-          <img
-            src="https://rb.gy/g1pwyx"
-            alt=""
-            className="cursor-pointer rounded"
-            onClick={logout}
-          />
-        </Link>
+
+        <img
+          src="https://rb.gy/g1pwyx"
+          alt=""
+          className="cursor-pointer rounded"
+          onClick={logout}
+        />
       </div>
     </header>
   );
