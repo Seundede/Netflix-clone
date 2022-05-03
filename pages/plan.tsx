@@ -34,7 +34,7 @@ const Plan = () => {
 
       <main className="pt-28 text-white max-w-5xl mx-auto pb-12 md:px-12 transition-all px-2.5">
         <h1 className="text-3xl mb-3 font-medium">
-          Choose the plan that's right for you
+          Choose the plan thats right for you
         </h1>
         <ul>
           <li className="flex items-center gap-x-2 text-lg">
