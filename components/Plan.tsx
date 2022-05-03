@@ -1,10 +1,11 @@
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import useAuth from "../hooks/useAuth";
 import { FiCheck } from 'react-icons/fi'
 import Table from "./Table";
 const Plan = () => {
   const { logout } = useAuth();
+
   return (
     <div>
       <header className="border-b border-white/10 bg-[#141414]">
@@ -45,9 +46,9 @@ const Plan = () => {
         </ul>
         <div className="mt-4 flex flex-col space-y-4">
           <div className="flex w-full items-center self-end md:w-3/5">
-            <div className="plan">Basic</div>
-            <div className="plan">Standard</div>
-            <div className="plan">Premium</div>
+            <div className={`plan && opacity-60`}>Basic</div>
+            <div className={`plan && opacity-60`}>Standard</div>
+            <div className={`plan && opacity-100`}>Premium</div>
           </div>
           <Table />
           <button>Subscribe</button>
