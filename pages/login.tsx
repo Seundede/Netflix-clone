@@ -32,13 +32,7 @@ const Login = () => {
         objectFit="cover"
         alt="background"
       />
-      <Image
-        src="https://rb.gy/ulxxee"
-        className="absolute left-4 top-4 cursor-pointer object-contain md:left-10 md:top-6"
-        width={100}
-        height={100}
-        alt='logo'
-      />
+      
       <form
         className="relative rounded bg-black mt-20 space-y-8 py-9 px-5 md:mt-0 md:max-w-md md:px-14"
         onSubmit={handleSubmit(onSubmit)}
