@@ -1,11 +1,16 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import useAuth from "../hooks/useAuth";
-import { FiCheck } from 'react-icons/fi'
-import Table from "./Table";
+import { FiCheck } from "react-icons/fi";
+import Table from "../components/Table";
+import { useRouter } from "next/router";
 const Plan = () => {
   const { logout } = useAuth();
-
+  const router = useRouter();
+  const handleClick = () => {
+    router.push("/");
+    console.log("clicked");
+  };
   return (
     <div>
       <header className="border-b border-white/10 bg-[#141414]">
@@ -26,7 +31,7 @@ const Plan = () => {
         </button>
       </header>
 
-      <main className="pt-28 text-white max-w-5xl pb-12 md:px-12 transition-all">
+      <main className="pt-28 text-white max-w-5xl mx-auto pb-12 md:px-12 transition-all px-2.5">
         <h1 className="text-3xl mb-3 font-medium">
           Choose the plan that's right for you
         </h1>
@@ -51,7 +56,12 @@ const Plan = () => {
             <div className={`plan && opacity-100`}>Premium</div>
           </div>
           <Table />
-          <button>Subscribe</button>
+          <button
+            className="rounded mx-auto w-11/12 bg-[#E50914] py-4 text-xl shadow hover:bg-[#f6121d] md:w-[420px]"
+            onClick={handleClick}
+          >
+            Subscribe
+          </button>
         </div>
       </main>
     </div>

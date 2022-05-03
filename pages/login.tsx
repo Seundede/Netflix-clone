@@ -1,4 +1,3 @@
-import { signInWithPopup, signInWithRedirect } from "firebase/auth";
 import Image from "next/image";
 import React, { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";

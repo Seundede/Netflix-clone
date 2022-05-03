@@ -6,7 +6,6 @@ import {
   signOut,
   User,
 } from "firebase/auth";
-
 import { useRouter } from "next/router";
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
 import { auth } from "../firebase";
@@ -57,7 +56,7 @@ export const AuthProvider = ({ children }: Props) => {
     await createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         setUser(userCredential.user);
-        router.push("/");
+        router.push("/plan");
         setLoading(false);
       })
       .catch((error) => console.log(error))

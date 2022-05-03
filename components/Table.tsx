@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { AiOutlineCheck } from 'react-icons/ai'
 const Table = () => {
   return (
     <table>
@@ -17,7 +17,7 @@ const Table = () => {
           <td className={`tableData && text-[gray]`}>Good</td>
           <td className={`tableData && text-[gray]`}>Better</td>
           <td className={`tableData && text-[#e50914]`}>Best</td>
-        </tr>{" "}
+        </tr>
         <tr className="tableRow">
           <td className="tableDataTitle">Resolution</td>
 
@@ -30,9 +30,15 @@ const Table = () => {
             Watch on your TV,computer,mobile phone and tablet{" "}
           </td>
 
-          <td className={`tableData && text-[gray]`}>Good</td>
-          <td className={`tableData && text-[gray]`}>Best</td>
-          <td className={`tableData && text-[#e50914]`}>Better</td>
+          <td className={`tableData && text-[gray]`}>
+            <AiOutlineCheck className="inline-block h-8 w-8"  />
+          </td>
+          <td className={`tableData && text-[gray]`}>
+            <AiOutlineCheck className="inline-block h-8 w-8" />
+          </td>
+          <td className={`tableData && text-[#e50914]`}>
+            <AiOutlineCheck className="inline-block h-8 w-8" />
+          </td>
         </tr>
       </tbody>
     </table>

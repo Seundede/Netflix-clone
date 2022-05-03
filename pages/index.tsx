@@ -35,10 +35,7 @@ const Home = ({
   const showModal = useRecoilValue(modalState)
   const { loading } = useAuth(); 
   const subscription = null;
-  if(loading || subscription ) {
-    return null
-  }
-  if(!subscription) return <Plan />
+
   return (
     <div className="h-screen lg:h-[140vh] relative bg-gradient-to-b from-gray-900/10 to-[#010511]">
       <Head>
