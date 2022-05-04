@@ -7,13 +7,14 @@ Netflix clone built with react, redux, react hooks, firebase and styled componen
 
 ## Technology stack
 
-- React
-- Redux 
-- Styled components
-- Firebase
-- React router
-- Axios
-- Netlify (deployment)
+- Next JS
+- Typescript
+- Tailwind
+-  Firebase 
+-  Recoil
+-  Material UI
+-  React hook form
+-  Netlify (deployment)
 
 ## Getting started
 
@@ -41,13 +42,13 @@ npm install
 ```
 3. Create a new firebase project and fill in  the .env file in your root directory with the appropriate API key.
 ```bash
-REACT_APP_API_KEY=
+NEXT_APP_API_KEY=
 
 
 ```
 4. Start the development server
 ```bash
-npm start
+npm run dev
 ```
 5. This will open the website in your browser on http://localhost:3000
 
