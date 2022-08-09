@@ -73,7 +73,7 @@ const Login = () => {
           Sign In
         </button>
         <div className="text-[gray]">
-          New to Netflix?{" "}
+          New to Netflix? {" "}
           <button
             className="text-white hover:underline"
             type="submit"

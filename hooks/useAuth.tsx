@@ -83,7 +83,7 @@ export const AuthProvider = ({ children }: Props) => {
   };
    const memoedValue = useMemo(
      () => ({ user, signUp, signIn, error, loading, logout }),
-     [user, loading, error, signIn, signUp]
+     [user, loading, error]
    );
   return (
     <AuthContext.Provider value={memoedValue}>{children}</AuthContext.Provider>
