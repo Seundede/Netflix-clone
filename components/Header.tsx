@@ -21,6 +21,7 @@ const Header = () => {
     };
   }, []);
   const { logout } = useAuth();
+
   return (
     <header className={`${scroll && "bg-[#141414]"}`}>
       <div className="flex items-center space-x-2 md:space-x-9">
@@ -45,13 +46,13 @@ const Header = () => {
       <div className="flex items-center space-x-4 text-sm font-light">
         <BsSearch className="hidden md:inline h-6 w-6" />
         <p className="hidden lg:inline">Kids</p>
-        <BsFillBellFill className="h-6 w-6" />
+        <BsFillBellFill className="h-6 w-6 " />
 
         <Image
           src="https://rb.gy/g1pwyx"
           alt="avatar"
-          width={40}
-          height={40}
+          width={30}
+          height={30}
           className="cursor-pointer rounded  object-contain "
           onClick={logout}
         />

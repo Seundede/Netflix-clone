@@ -5,26 +5,12 @@ import {  GetServerSideProps } from "next";
 import requests from '../requests'
 import { Movie } from '../typings';
 import Row from '../components/Row';
-import useAuth from '../hooks/useAuth';
 import { useRecoilValue } from 'recoil';
 import { modalState } from '../atoms/modalAtom';
 import PopUp from "../components/PopUp";
 import { ErrorBoundary } from "react-error-boundary";
 
-interface List {
-  error: string;
-  resetErrorBoundary: any;
-}
 
-function ErrorFallback({ error, resetErrorBoundary }: List) {
-  return (
-    <div role="alert">
-      <p>Something went wrong:</p>
-      <pre>{error}</pre>
-      <button onClick={resetErrorBoundary}>Try again</button>
-    </div>
-  );
-}
 
 interface Props {
   netflixOriginals: Movie[]
@@ -51,7 +37,7 @@ const Home = ({
  
 
   return (
-    <ErrorBoundary FallbackComponent={ErrorFallback}>
+
       <div className="h-screen lg:h-[140vh] relative bg-gradient-to-b from-gray-900/10 to-[#010511]">
         <Head>
           <title>Netflix</title>
@@ -59,7 +45,7 @@ const Home = ({
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <Header />
-        <main className="relative pl-4 pb-24 lg:pl-16 space-y-4">
+        <main className="relative pl-4 pb-20 lg:pl-16 space-y-4">
           <Banner netflixOriginals={netflixOriginals} />
           <section>
             <Row title="Trending Now" movies={trendingNow} />
@@ -73,7 +59,7 @@ const Home = ({
         </main>
         <PopUp />
       </div>
-    </ErrorBoundary>
+ 
   );
 };
 

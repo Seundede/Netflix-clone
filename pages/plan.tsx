@@ -1,17 +1,19 @@
 import Link from "next/link";
-import React, { useState } from "react";
+import React from "react";
 import useAuth from "../hooks/useAuth";
 import { FiCheck } from "react-icons/fi";
 import Table from "../components/Table";
 import { useRouter } from "next/router";
 import Image from "next/image";
+
 const Plan = () => {
+
   const { logout } = useAuth();
   const router = useRouter();
   const handleClick = () => {
     router.push("/");
-    console.log("clicked");
   };
+
   return (
     <div>
       <header className="border-b border-white/10 bg-[#141414]">
@@ -65,6 +67,7 @@ const Plan = () => {
           </button>
         </div>
       </main>
+    
     </div>
   );
 };

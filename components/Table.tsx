@@ -27,7 +27,7 @@ const Table = () => {
         </tr>
         <tr className="tableRow">
           <td className="tableDataTitle">
-            Watch on your TV,computer,mobile phone and tablet{" "}
+            Watch on your TV, computer, mobile phone and tablet{" "}
           </td>
 
           <td className={`tableData && text-[gray]`}>
