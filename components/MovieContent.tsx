@@ -13,7 +13,7 @@ const MovieContent = ({movie}:Props) => {
     const [currentMovie, setCurrentMovie] = useRecoilState(movieState);
   return (
     <div
-      className="relative h-44 min-w-[180px] cursor-pointer transition duration-300 ease-out hover:scale-110"
+      className="relative h-60 min-w-[180px] cursor-pointer transition duration-300 ease-out hover:scale-110"
       onClick={() => {
         setCurrentMovie(movie);
         setShowModal(true);

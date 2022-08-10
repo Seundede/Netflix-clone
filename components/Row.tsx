@@ -10,7 +10,7 @@ interface Props {
 const Row = ({title,movies}: Props) => {
   
   return (
-    <div className="h-60 space-y-1 md:space-y-2">
+    <div className="h-80 space-y-1 md:space-y-2">
       <h2 className="cursor-pointer font-semibold text-[#e5e5e5] w-55 text-sm transition duration-300 hover:text-white md:text-2xl">
         {title}
       </h2>

@@ -1,19 +1,21 @@
 # Netflix Clone
-Netflix clone built with react, redux, react hooks, firebase and styled component.
 
-## [Demo](https://netflix-clone-build.netlify.app/)
-
+This is a movies application which displays movie data based on categories, and extensive details like trailers of each movie. It fetches data from The Movie DataBase API and is implemented using Typescript, Next JS, Tailwind, Recoil 
 
 
 ## Technology stack
 
-- React
-- Redux 
-- Styled components
+- Typescript
+- Next JS
+- Recoil
 - Firebase
-- React router
-- Axios
-- Netlify (deployment)
+- Vercel (deployment)
+
+## Dependency
+
+- Reck hook form
+- React player
+- React icons
 
 ## Getting started
 
@@ -39,15 +41,22 @@ cd Nextjs Netflix-clone
 ```bash
 npm install
 ```
-3. Create a new firebase project and fill in  the .env file in your root directory with the appropriate API key.
+3. Create a new firebase project and fill in  the required information in firebase.js file.
 ```bash
-REACT_APP_API_KEY=
-
-
+  apiKey: "",
+  authDomain: "",
+  projectId: "",
+  storageBucket: "",
+  messagingSenderId: "",
+  appId: "",
 ```
-4. Start the development server
+4. Create a .env file in your root directory and input API key for TMDB site. 
 ```bash
-npm start
+NEXT_PUBLIC_API_KEY=
+```
+5. Start the development server
+```bash
+npm run dev
 ```
 5. This will open the website in your browser on http://localhost:3000
 
