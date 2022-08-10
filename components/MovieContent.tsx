@@ -4,6 +4,7 @@ import { baseUrl } from '../requests';
 import { Movie } from '../typings'
 import { useRecoilState } from "recoil";
 import { modalState, movieState } from "../atoms/modalAtom";
+
 interface Props {
     movie: Movie
 }
@@ -18,7 +19,8 @@ const MovieContent = ({movie}:Props) => {
         setShowModal(true);
       }}
     >
-      {movie.name}
+      <h3 className="text-white z-50 absolute top-2 left-3"> {movie.name}</h3>
+
       <Image
         src={`${baseUrl}${movie?.backdrop_path || movie?.poster_path}`}
         alt="banner"

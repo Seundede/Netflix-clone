@@ -8,7 +8,6 @@ import Row from '../components/Row';
 import { useRecoilValue } from 'recoil';
 import { modalState } from '../atoms/modalAtom';
 import PopUp from "../components/PopUp";
-import { ErrorBoundary } from "react-error-boundary";
 
 
 
@@ -45,7 +44,7 @@ const Home = ({
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <Header />
-        <main className="relative pl-4 pb-20 lg:pl-16 space-y-4">
+        <main className="relative pl-4 pb-10 lg:pl-16 space-y-4">
           <Banner netflixOriginals={netflixOriginals} />
           <section>
             <Row title="Trending Now" movies={trendingNow} />

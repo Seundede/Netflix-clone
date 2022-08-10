@@ -7,10 +7,12 @@ import ReactPlayer from "react-player/lazy";
 import { FaPlay, FaThumbsUp, FaVolumeMute, FaVolumeUp } from "react-icons/fa";
 
 const PopUp = () => {
+
   interface Genre {
     id: number;
     name: string;
   }
+
   interface Element {
     type:
       | "Bloopers"
@@ -21,6 +23,7 @@ const PopUp = () => {
       | "Teaser";
   }
   const [showModal, setShowModal] = useRecoilState(modalState);
+
   const handleClose = () => {
     setShowModal(false);
   };
@@ -55,14 +58,14 @@ const PopUp = () => {
     <Modal
       open={showModal}
       onClose={handleClose}
-      className="!top-7 left-0 right-0 z-50 mx-auto w-full max-w-5xl overflow-hidden rounded-md fixed "
+      className="!top-16 left-0 right-0 z-50 mx-auto w-[80vw] max-w-5xl overflow-hidden rounded-md fixed "
     >
       <div className='relative'>
         <button
           onClick={handleClose}
           className="absolute right-5 top-5 h-9 w-9 border-none bg-[#181818] hover:bg-[#181818] modalButton z-50 "
         >
-          <AiOutlineClose className="h-6 w-6" />
+          <AiOutlineClose className="h-5 w-4" />
         </button>
         <div className="relative pt-[56.25%]">
           <ReactPlayer
@@ -75,8 +78,8 @@ const PopUp = () => {
           />
           <div className="absolute bottom-10 flex items-center w-full justify-between px-10">
             <div className="flex space-x-3">
-              <button className="flex items-center rounded gap-x-2 bg-white px-8 text-xl font-bold text-black transition hover:bg-[#e6e6e6]">
-                <FaPlay className="text-black h-7 w-7  " />
+              <button className="flex items-center rounded gap-x-2 bg-white px-3 text-xl font-bold text-black transition hover:bg-[#e6e6e6]">
+                <FaPlay className="text-black h-4 w-6  " />
                 Play
               </button>
               <button className="modalButton">
@@ -88,14 +91,14 @@ const PopUp = () => {
             </div>
             <button onClick={() => setMuted(!muted)} className="modalButton">
               {muted ? (
-                <FaVolumeUp className="h-7 w-7" />
+                <FaVolumeUp className="h-5 w-5" />
               ) : (
-                <FaVolumeMute className="h-7 w-7" />
+                <FaVolumeMute className="h-5 w-5" />
               )}
             </button>
           </div>
         </div>
-        <div className="space-y-5 text-lg bg-[#181818] p-10 rounded-b-md">
+        <div className="space-y-5 text-sm lg:text-lg bg-[#181818] p-10 rounded-b-md">
           <div className="flex items-center text-sm space-x-3">
             <p className="font-semibold text-green-400">
               {movie?.vote_average * 10}% Match
