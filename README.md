@@ -3,6 +3,9 @@
 This is a movies application which displays movie data based on categories, and extensive details like trailers of each movie. It fetches data from The Movie DataBase API and is implemented using Typescript, Next JS, Tailwind, Recoil 
 
 
+![readmeImage](https://user-images.githubusercontent.com/63148200/184045681-eab5f0b5-31ff-478f-9721-b721616d88cf.png)
+
+
 ## Technology stack
 
 - Typescript
